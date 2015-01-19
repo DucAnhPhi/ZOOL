@@ -50,7 +50,7 @@ public class Game
         eingangshalle = new Room("Du befindest dich in der Eingangshalle",null,null);
         schlossgarten = new Room("Du befindest dich im Schlossgarten","Tom",null);
         kueche = new Room("Du befindest dich in der Küche",null,"Brot");
-        schlafzimmer = new Room("Du befindest dich im Schlafzimmer",null,null);
+        schlafzimmer = new Room("Du befindest dich im Schlafzimmer",null,"Rucksack");
         badezimmer = new Room("Du befindest dich im Badezimmer",null,null);
         keller = new Room("Du befindest dich im Keller",null,null);
         vorratskammer = new Room("Du befindest dich in der Vorratskammer",null,null);
