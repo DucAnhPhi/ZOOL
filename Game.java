@@ -30,7 +30,7 @@ public class Game
     public Game() 
     {
         rooms = new Room[12];
-        backpackFound = false;
+       backpackFound = false;
         createRooms();
         parser = new Parser();    
         assignment = new Assignments();
@@ -50,7 +50,7 @@ public class Game
         eingangshalle = new Room("Du befindest dich in der Eingangshalle",null,null);
         schlossgarten = new Room("Du befindest dich im Schlossgarten","Tom",null);
         kueche = new Room("Du befindest dich in der Küche",null,"Brot");
-        schlafzimmer = new Room("Du befindest dich im Schlafzimmer",null,"Rucksack");
+        schlafzimmer = new Room("Du befindest dich im Schlafzimmer",null,"Rucksack"); //Rucksack hinzugefügt
         badezimmer = new Room("Du befindest dich im Badezimmer",null,null);
         keller = new Room("Du befindest dich im Keller",null,null);
         vorratskammer = new Room("Du befindest dich in der Vorratskammer",null,null);
@@ -280,8 +280,10 @@ public class Game
             else{
                 if(currentRoom.getItemName() == null){return "Das gibt es hier nicht!";}
                 else if(currentRoom.getItemName().equals(command.getSecondWord())){
-                    
-                    if(Inventar.backpackIsThere){
+                    if(command.getSecondWord().equals("Rucksack")){
+                        backpackFound=true;
+                    }
+                    if(backpackFound){
                         String result = "Du erhälst ";
                         result += command.getSecondWord();
                         Inventar.addToInventory(command.getSecondWord());
