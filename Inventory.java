@@ -25,11 +25,15 @@ public class Inventory
     }
 
     public void addToInventory(String item){
-        
+                
             
                 if(!InventarIsFull){
                     Inventar.add(item);
                     ObjectsInInventory++;
+                        //Rucksack wird nicht mehr im Inventar angezeigt.
+                        if(Inventar.contains("Rucksack")){
+                            Inventar.remove("Rucksack");
+                        } 
                 }
                 else{System.out.println("Dein Rucksack ist schon voll!");}
             
